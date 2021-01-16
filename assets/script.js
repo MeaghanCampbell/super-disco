@@ -22,12 +22,12 @@ $('#currentDay').append( document.createTextNode(currentDate))
 
 // click into a time block, enter an event
 
-$( ".saveBtn" ).click(function() {
-  var text = $(this)
-    .text()
-    .trim()
+var id = $('.description').attr('id')
 
-  var textInput = $(".description").val()
+$( ".saveBtn" ).click(function(event) {
+  var idNumber = event.target.id
+  var textInput = $("#" + idNumber + "btn").val()
+
   console.log(textInput)
 
   localStorage.setItem("task", textInput)
