@@ -20,24 +20,33 @@ $('#currentDay').append( document.createTextNode(currentDate))
     var seventeen = moment('.hour-seventeen').set("hour", 17);
   } */
 
-// click into a time block, enter an event
+// click into a time block, enter an event and save
 
-var id = $('.description').attr('id')
+var textInputValues = [];
 
-$( ".saveBtn" ).click(function(event) {
-  var idNumber = event.target.id
-  var textInput = $("#" + idNumber + "btn").val()
-
+$(".saveBtn").click(function () {
+  var textInput = $(this).siblings("textarea").val()
   console.log(textInput)
 
-  localStorage.setItem("task", textInput)
+  textInputValues.push(textInput)
+  console.log(textInputValues)
+
+  saveTasks();
+
 });
 
-// get items when page is refreshed
+// save in local storage
+
+var saveTasks = function() {
+    localStorage.setItem("task", JSON.stringify(textInputValues));
+
+    loadTasks();
+}
+
+// get from local storage
 
 var loadTasks = function() {
-  tasks = localStorage.getItem("tasks");
-  console.log(tasks)
+  tasks = JSON.parse(localStorage.getItem("tasks"));
 }
 
 // pastPresentFuture();
