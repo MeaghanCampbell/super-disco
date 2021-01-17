@@ -46,7 +46,7 @@ var saveTasks = function() {
 // get from local storage
 
 var loadTasks = function() {
-  tasks = JSON.parse(localStorage.getItem("tasks"));
+  tasks = JSON.parse(localStorage.getItem("task"));
 }
 
 // pastPresentFuture();
