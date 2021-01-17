@@ -52,5 +52,3 @@ var loadTasks = function() {
   tasks = JSON.parse(localStorage.getItem('task'));
 }
 
-
-//pastPresentFuture();
