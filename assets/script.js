@@ -6,8 +6,10 @@ $('#currentDay').append( document.createTextNode(currentDate))
 // Blocks color coded if they are past present or future
 
   var pastPresentFuture = function () {
-    var time = $(".time")
-    console.log(time); 
+    var past = moment().subtract(1, 'hour')
+    var present = moment().hour()
+    var future = moment().add(1, 'hour')
+    console.log(past)
 
     var nine = moment('.hour-nine').set("hour", 9);
     var ten = moment('.hour-ten').set("hour", 10);
@@ -19,6 +21,7 @@ $('#currentDay').append( document.createTextNode(currentDate))
     var sixteen = moment('.hour-sixteen').set("hour", 16);
     var seventeen = moment('.hour-seventeen').set("hour", 17);
   }
+
 
 
 var textInputValues = ["","","","","","","","",""];
